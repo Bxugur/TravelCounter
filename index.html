@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Travel Tracker</title>
+
+  <!-- Leaflet -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <h1>🌍 Travel Tracker</h1>
+  <div id="stats">0 / 195 ülke • %0</div>
+  <button id="themeToggle" class="theme-btn">🌙</button>
+</header>
+
+<div class="layout">
+
+  <!-- SOL PANEL -->
+  <aside class="panel">
+    <h2>Hangi ülkeleri gezdin?</h2>
+
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Ülke ara..."
+      class="search"
+    />
+
+    <div id="countryList"></div>
+
+    <button id="saveBtn">Kaydet</button>
+    <button id="clearBtn" class="secondary">Tümünü Sıfırla</button>
+  </aside>
+
+  <!-- HARİTA -->
+  <main class="map-area">
+    <div id="map"></div>
+  </main>
+
+  <!-- SAĞ DETAY PANEL -->
+  <aside id="detailPanel" class="detail-panel hidden">
+    <button id="closePanel" class="close-btn">✕</button>
+    <h2 id="detailCountry"></h2>
+    <p id="detailStats"></p>
+
+    <div class="progress">
+      <div id="detailProgress" class="progress-bar"></div>
+    </div>
+
+    <h4>Şehirler</h4>
+    <ul id="cityList"></ul>
+  </aside>
+
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

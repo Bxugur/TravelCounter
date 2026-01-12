@@ -1,0 +1,171 @@
+:root {
+  --bg: #0f172a;
+  --panel: #111827;
+  --card: #1f2937;
+  --accent: #22c55e;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+}
+
+body.light {
+  --bg: #f8fafc;
+  --panel: #ffffff;
+  --card: #f1f5f9;
+  --accent: #16a34a;
+  --text: #020617;
+  --muted: #475569;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* TOP BAR */
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 20px;
+  background: #020617;
+}
+
+/* LAYOUT */
+.layout {
+  display: flex;
+  height: calc(100vh - 60px);
+}
+
+/* PANEL */
+.panel {
+  width: 320px;
+  padding: 20px;
+  background: var(--panel);
+  overflow-y: auto;
+}
+
+/* SEARCH */
+.search {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+  background: #020617;
+  color: var(--text);
+}
+
+/* COUNTRY */
+.country {
+  background: var(--card);
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.country h3 {
+  margin: 0;
+  cursor: pointer;
+}
+
+.cities {
+  display: none;
+  margin-top: 8px;
+}
+
+.cities label {
+  display: block;
+  font-size: 14px;
+}
+
+/* BUTTONS */
+button {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: var(--accent);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: #334155;
+}
+
+.theme-btn {
+  background: transparent;
+  font-size: 18px;
+}
+
+/* MAP */
+.map-area {
+  flex: 1;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+/* DETAIL PANEL */
+.detail-panel {
+  width: 300px;
+  background: var(--panel);
+  padding: 20px;
+  border-left: 1px solid #020617;
+  position: relative;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+.detail-panel.show {
+  transform: translateX(0);
+}
+
+.detail-panel.hidden {
+  display: none;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  font-size: 18px;
+}
+
+/* PROGRESS */
+.progress {
+  background: #020617;
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 8px 0;
+}
+
+.progress-bar {
+  height: 8px;
+  background: var(--accent);
+  width: 0%;
+}
+
+/* CITY LIST */
+#cityList {
+  list-style: none;
+  padding: 0;
+}
+
+#cityList li {
+  padding: 6px 0;
+}
+
+#cityList li.visited {
+  color: var(--accent);
+}
